@@ -132,7 +132,7 @@ const AddUser  = (props: Props) => {
       <div className="w-[478px] h-14 absolute top-[355px] left-[544px] rounded-[13px] bg-[#d9d9d9] border border-[#969595]" />
       <div className="w-[478px] h-14 absolute top-[430px] left-[544px] rounded-[13px] bg-[#d9d9d9] border border-[#969595]" />
       <div
-        className="box-border flex justify-start items-start absolute top-[514px] left-[843px] gap-2.5 px-[45px] py-[11px] rounded-[20px] bg-[#909090]"
+        className="box-border flex justify-start items-start absolute top-[514px] left-[843px] gap-2.5 px-[45px] py-[11px] rounded-[20px] bg-[#774f39ed]"
         style={{
           boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
         }}
@@ -144,7 +144,7 @@ const AddUser  = (props: Props) => {
         </p>
       </div>
       <div
-        className="box-border flex justify-start items-start absolute top-[514px] left-[670px] gap-2.5 px-[45px] py-[11px] rounded-[20px] bg-[#969595]"
+        className="box-border flex justify-start items-start absolute top-[514px] left-[670px] gap-2.5 px-[45px] py-[11px] rounded-[20px] bg-[#774f39f0]"
         style={{
           boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
         }}

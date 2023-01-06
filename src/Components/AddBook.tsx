@@ -354,13 +354,13 @@ const AddBook = (props: Props) => {
         }}
       />
       <div
-        className="w-44 h-[46px] absolute top-[840px] left-[843px] rounded-[20px] bg-[#c2c1c1]"
+        className="w-44 h-[46px] absolute top-[840px] left-[843px] rounded-[20px] bg-[#774f39ef]"
         style={{
           boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
         }}
       />
       <div
-        className="w-44 h-[46px] absolute top-[840px] left-[646px] rounded-[20px] bg-[#c1c1c1]"
+        className="w-44 h-[46px] absolute top-[840px] left-[646px] rounded-[20px] bg-[#774f39eb]"
         style={{
           boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
         }}
