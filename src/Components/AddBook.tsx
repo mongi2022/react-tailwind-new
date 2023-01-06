@@ -111,8 +111,6 @@ const AddBook = (props: Props) => {
       <p className="whitespace-pre-wrap absolute top-[793px] left-[107px] font-['Poppins'] text-xxl leading-[normal] tracking-wider text-left text-[#ffffff]">
         Blog personnel
       </p>
-      <IconMenu />
-      <IconViewGrid />
       <div
         className="w-[992px] h-[744px] absolute top-[249px] left-96 rounded-3xl bg-white/[0.65]"
         style={{
@@ -389,22 +387,22 @@ const AddBook = (props: Props) => {
       <p className="whitespace-pre-wrap absolute top-[279px] left-[548px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left capitalize text-[#ffffff]">
         ajouter un livre
       </p>
-      <p className="whitespace-pre-wrap absolute top-[371px] left-[563px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left capitalize text-[#ffffff]">
+      <p className="whitespace-pre-wrap absolute top-[371px] left-[563px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left capitalize text-[#636363]">
         Titre
       </p>
-      <p className="whitespace-pre-wrap absolute top-[521px] left-[563px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left capitalize text-[#ffffff]">
+      <p className="whitespace-pre-wrap absolute top-[521px] left-[563px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left capitalize text-[#636363]">
         Langue
       </p>
-      <p className="whitespace-pre-wrap absolute top-[447px] left-[563px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left  text-[#ffffff]">
+      <p className="whitespace-pre-wrap absolute top-[447px] left-[563px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left text-[#636363]">
         Nom d’auteur
       </p>
-      <p className="whitespace-pre-wrap absolute top-[597px] left-[563px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left capitalize text-[#ffffff]">
+      <p className="whitespace-pre-wrap absolute top-[597px] left-[563px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left capitalize text-[#636363]">
         thème
       </p>
-      <p className="whitespace-pre-wrap absolute top-[672px] left-[563px] w-[168px] h-6 font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left capitalize text-[#ffffff]">
+      <p className="whitespace-pre-wrap absolute top-[672px] left-[563px] w-[168px] h-6 font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left capitalize text-[#636363]">
         importer une image
       </p>
-      <p className="whitespace-pre-wrap absolute top-[747px] left-[563px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left capitalize text-[#ffffff]">
+      <p className="whitespace-pre-wrap absolute top-[747px] left-[563px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left capitalize text-[#636363]">
         importer un pdf
       </p>
       <IconCancel />

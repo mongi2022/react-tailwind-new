@@ -8,14 +8,6 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <ProSidebar>
-        <img
-          className="responsive"
-          src="/img/icons/logo2.png"
-          width={220}
-          height={150}
-          alt="icon-sidebar"
-          style={{ paddingLeft: 55 }}
-        />
         <Menu>
           <SubMenu
             title={intl.formatMessage({ id: "theme1" })}

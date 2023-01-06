@@ -7,7 +7,6 @@ import IconProfileCircled from "./modules/IconProfileCircled";
 import Vector from "./modules/Vector";
 import Vector1 from "./modules/Vector1";
 import Vector2 from "./modules/Vector2";
-import Vector3 from "./modules/Vector3";
 import Line3 from "./modules/Line3";
 import IconMenu from "./modules/IconMenu";
 import IconViewGrid from "./modules/IconViewGrid";
@@ -34,13 +33,13 @@ const AddUser  = (props: Props) => {
     >
       <div className="w-[312px] h-[1024px]">
         <div
-          className="w-[312px] h-[1024px] absolute top-0 left-0 rounded-tr-[57px] bg-[#897647]"
+          className="w-[312px] h-[1024px] absolute top-0 left-0 rounded-tr-[57px] bg-[#81807e]"
           style={{
             boxShadow: "0px 4px 6px 0 rgba(0,0,0,0.3)",
           }}
         />
       </div>
-      <div className="w-[226px] h-[46px] absolute top-[782px] left-[46px] rounded-[40px] bg-[#e5d16f]" />
+      <div className="w-[226px] h-[46px] absolute top-[782px] left-[46px] rounded-[40px] bg-[#774f3989]" />
       <p className="whitespace-pre-wrap absolute top-[38px] left-[93px] font-['MonteCarlo'] text-4xl leading-[normal] text-left text-white">
         Bibliothèque
       </p>
@@ -74,13 +73,10 @@ const AddUser  = (props: Props) => {
       <Vector />
       <Vector1 />
       <Vector2 />
-      <Vector3 />
       <Line3 />
-      <p className="whitespace-pre-wrap absolute top-[790px] left-[137px] font-['Poppins'] text-xl leading-[normal] tracking-wider text-left text-[#897647]">
-        Quiz
+      <p className="whitespace-pre-wrap absolute top-[793px] left-[107px] font-['Poppins'] text-xxl leading-[normal] tracking-wider text-left text-[#ffffff]">
+      Blog personnel
       </p>
-      <IconMenu />
-      <IconViewGrid />
       <div
         className="w-[992px] h-[318px] absolute top-[248px] left-96 rounded-3xl bg-white/[0.65]"
         style={{
@@ -136,38 +132,14 @@ const AddUser  = (props: Props) => {
       <div className="w-[478px] h-14 absolute top-[355px] left-[544px] rounded-[13px] bg-[#d9d9d9] border border-[#969595]" />
       <div className="w-[478px] h-14 absolute top-[430px] left-[544px] rounded-[13px] bg-[#d9d9d9] border border-[#969595]" />
       <div
-        className="box-border flex justify-start items-start absolute top-[514px] left-[843px] gap-2.5 px-[45px] py-[11px] rounded-[20px] bg-[#897647]"
+        className="box-border flex justify-start items-start absolute top-[514px] left-[843px] gap-2.5 px-[45px] py-[11px] rounded-[20px] bg-[#909090]"
         style={{
           boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
         }}
       >
         <p className="whitespace-pre-wrap flex-grow-0 flex-shrink-0 font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left text-white">
-          <span className="whitespace-pre-wrap flex-grow-0 flex-shrink-0 font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left uppercase text-white">
-            C
-          </span>
-          <span className="whitespace-pre-wrap flex-grow-0 flex-shrink-0 font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left lowercase text-white">
-            O
-          </span>
-          <span className="whitespace-pre-wrap flex-grow-0 flex-shrink-0 font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left lowercase text-white">
-            N
-          </span>
-          <span className="whitespace-pre-wrap flex-grow-0 flex-shrink-0 font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left lowercase text-white">
-            F
-          </span>
-          <span className="whitespace-pre-wrap flex-grow-0 flex-shrink-0 font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left lowercase text-white">
-            I
-          </span>
-          <span className="whitespace-pre-wrap flex-grow-0 flex-shrink-0 font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left lowercase text-white">
-            R
-          </span>
-          <span className="whitespace-pre-wrap flex-grow-0 flex-shrink-0 font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left lowercase text-white">
-            M
-          </span>
-          <span className="whitespace-pre-wrap flex-grow-0 flex-shrink-0 font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left lowercase text-white">
-            E
-          </span>
-          <span className="whitespace-pre-wrap flex-grow-0 flex-shrink-0 font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left lowercase text-white">
-            R
+          <span className="whitespace-pre-wrap flex-grow-0 flex-shrink-0 font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left capitalize text-white">
+          Confirmer
           </span>
         </p>
       </div>
@@ -178,69 +150,21 @@ const AddUser  = (props: Props) => {
         }}
       >
         <p className="whitespace-pre-wrap flex-grow-0 flex-shrink-0 font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left capitalize text-white">
-          annuler
+        Annuler
         </p>
       </div>
-      <div className="w-[557px] h-[68px] absolute top-[257px] left-[505px] rounded-tl-[22px] rounded-tr-[22px] bg-[#d6c481]" />
-      <p className="whitespace-pre-wrap absolute top-[279px] left-[548px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
+      <div className="w-[557px] h-[68px] absolute top-[257px] left-[505px] rounded-tl-[22px] rounded-tr-[22px] bg-[#b6b6b6]" />
+      <p className="whitespace-pre-wrap absolute top-[279px] left-[548px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left capitalize text-[#ffffff]">
         ajouter un utilisateur
       </p>
       <p className="whitespace-pre-wrap absolute top-[371px] left-[563px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left text-[#969595]">
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left uppercase text-[#969595]">
-          L
-        </span>
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left lowercase text-[#969595]">
-          O
-        </span>
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left lowercase text-[#969595]">
-          G
-        </span>
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left lowercase text-[#969595]">
-          I
-        </span>
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left lowercase text-[#969595]">
-          N
-        </span>
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left lowercase text-[#969595]">
-          {" "}
+        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left capitalize text-[#969595]">
+          Login
         </span>
       </p>
       <p className="whitespace-pre-wrap absolute top-[447px] left-[563px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left text-[#969595]">
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left uppercase text-[#969595]">
-          m
-        </span>
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left lowercase text-[#969595]">
-          O
-        </span>
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left lowercase text-[#969595]">
-          T
-        </span>
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left lowercase text-[#969595]">
-          {" "}
-        </span>
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left lowercase text-[#969595]">
-          D
-        </span>
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left lowercase text-[#969595]">
-          E
-        </span>
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left lowercase text-[#969595]">
-          {" "}
-        </span>
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left lowercase text-[#969595]">
-          P
-        </span>
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left lowercase text-[#969595]">
-          A
-        </span>
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left lowercase text-[#969595]">
-          S
-        </span>
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left lowercase text-[#969595]">
-          S
-        </span>
-        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left lowercase text-[#969595]">
-          E
+        <span className="whitespace-pre-wrap font-['Poppins'] text-base leading-[normal] tracking-[0.03em] italic text-left capitalize text-[#969595]">
+          Mot de passe
         </span>
       </p>
       <IconCancel />
