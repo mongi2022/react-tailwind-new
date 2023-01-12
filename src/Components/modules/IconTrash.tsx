@@ -3,7 +3,7 @@ import React from "react";
 const IconTrash = () => {
   return (
     <svg
-      className="block w-[18px] h-[18px] absolute top-[328px] left-[1301px]"
+      className="block w-[18px] h-[18px] absolute top-[328px] left-[750px]"
       width={20}
       height={20}
       viewBox="0 0 20 20"

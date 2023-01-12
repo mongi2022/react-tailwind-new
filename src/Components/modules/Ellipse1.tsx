@@ -3,7 +3,7 @@ import React from "react";
 const Ellipse1 = () => {
   return (
     <svg
-      className="absolute top-[197px] left-96"
+      className="absolute top-[80px] left-[30px]"
       width={30}
       height={30}
       viewBox="0 0 30 30"

@@ -3,7 +3,7 @@ import React from "react";
 const Group12 = () => {
   return (
     <svg
-      className="w-[32px] h-[32px] top-[48px] left-[1167px] absolute"
+      className="w-[32px] h-[32px] top-[48px] left-[550px] absolute"
       width={32}
       height={32}
       viewBox="0 0 32 32"

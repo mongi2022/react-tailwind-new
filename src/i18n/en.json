@@ -88,5 +88,11 @@
   "theme2": "Initial Training",
   "theme3": "Human Psychology",
   "theme4": "Various",
-  "placeholder": "Search here..."
+  "placeholder": "Search here...",
+  "title.acc": "What's new at the library",
+  "title2.acc": "All themes",
+  "search.page.title": "*You are looking for :",
+  "bookdetails.button": "backtrack",
+  "affichageList.title": "View by List",
+  "affichageIcon.title": "Display by icons"
 }

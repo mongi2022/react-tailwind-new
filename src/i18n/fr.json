@@ -88,5 +88,11 @@
   "theme2": "Formation Initiale",
   "theme3": "Psychologie Humaine",
   "theme4": "Divers",
-  "placeholder": "Chercher ici..."
+  "placeholder": "Chercher ici...",
+  "title.acc": "Les nouveautés à la bibliothèque",
+  "title2.acc": "Tous les thémes",
+  "search.page.title": "*Vous recherche :",
+  "bookdetails.button": "retour en arrière",
+  "affichageList.title": "Affichage par Liste",
+  "affichageIcon.title": "Affichage par icons"
 }

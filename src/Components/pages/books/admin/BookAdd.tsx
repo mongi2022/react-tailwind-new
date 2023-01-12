@@ -130,22 +130,22 @@ const BookAdd = (props: BookAddPropsType) => {
   return (
     <>
       <Button
-        style={{ backgroundColor: "#855e42", border: 0 }}
+        className="w-[50px] h-[50px] top-[-90px] left-[880px] absolute"
+        style={{ backgroundColor: "#deb887", border: 0 }}
         size="lg"
-        className="mb-2"
         onClick={() => setIsOpened(true)}
       >
-        <FormattedMessage id="page.books.add" />{" "}
         <FontAwesomeIcon icon={faAdd} />
       </Button>
       <Modal
+      className="font-['Poppins']"
         centered
         scrollable
         isOpen={isOpened}
         toggle={() => setIsOpened(!isOpened)}
       >
         <ModalHeader
-          style={{ backgroundColor: "#deb887", color: "#855e42" }}
+          style={{ backgroundColor: "gray", color: "white" }}
           toggle={() => setIsOpened(!isOpened)}
         >
           <FormattedMessage id="books.add.dialog.title" />
@@ -250,7 +250,11 @@ const BookAdd = (props: BookAddPropsType) => {
         </ModalBody>
         <ModalFooter>
           <Button
-            style={{ backgroundColor: "#855e42", border: 0, fontFamily: "Caveat Brush"}}
+            style={{
+              backgroundColor: "lightgray",
+              border: 0,
+              fontFamily: "Caveat Brush",
+            }}
             onClick={submit}
             disabled={
               !title ||
@@ -265,7 +269,11 @@ const BookAdd = (props: BookAddPropsType) => {
             <FormattedMessage id="button.confirm" />
           </Button>{" "}
           <Button
-            style={{ backgroundColor: "#deb887", border: 0, fontFamily: "Caveat Brush" }}
+            style={{
+              backgroundColor: "lightgray",
+              border: 0,
+              fontFamily: "Caveat Brush",
+            }}
             onClick={() => setIsOpened(false)}
           >
             <FormattedMessage id="button.cancel" />

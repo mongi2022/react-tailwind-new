@@ -3,9 +3,9 @@ import React from "react";
 const Ellipse9 = () => {
   return (
     <svg
-      className="absolute top-[639px] left-[605px]"
-      width={206}
-      height={206}
+      className="absolute top-[400px] left-[200px]"
+      width={120}
+      height={120}
       viewBox="0 0 206 206"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

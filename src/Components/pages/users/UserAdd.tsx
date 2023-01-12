@@ -46,15 +46,15 @@ const UserAdd = (props: UserAddPropsType) => {
   return (
     <>
       <Button
-        style={{ backgroundColor: "#855e42", border: 0 }}
+        className="w-[50px] h-[50px] top-[-210px] left-[880px] absolute"
+        style={{ backgroundColor: "#deb887", border: 0 }}
         size="lg"
-        className="mb-2"
         onClick={() => setIsOpened(true)}
       >
-        <FormattedMessage id="page.users.add" />{" "}
         <FontAwesomeIcon icon={faAdd} />
       </Button>
       <Modal
+        className="font-['Poppins']"
         centered
         scrollable
         isOpen={isOpened}
@@ -63,7 +63,7 @@ const UserAdd = (props: UserAddPropsType) => {
         <Form onSubmit={(e) => submit()}>
           <ModalHeader
             toggle={() => setIsOpened(!isOpened)}
-            style={{ backgroundColor: "#deb887", color: "#855e42" }}
+            style={{ backgroundColor: "gray", color: "white" }}
           >
             <FormattedMessage id="users.add.dialog.title" />
           </ModalHeader>
@@ -95,17 +95,20 @@ const UserAdd = (props: UserAddPropsType) => {
           </ModalBody>
           <ModalFooter>
             <Button
-              style={{ backgroundColor: "#855e42", border: 0, fontFamily: "Caveat Brush" }}
+              style={{
+                backgroundColor: "lightgray",
+                border: 0,
+              }}
               type="submit"
-              disabled={
-                !username ||
-                !password
-              }
+              disabled={!username || !password}
             >
               <FormattedMessage id="button.confirm" />
             </Button>{" "}
             <Button
-              style={{ backgroundColor: "#deb887", border: 0, fontFamily: "Caveat Brush" }}
+              style={{
+                backgroundColor: "lightgray",
+                border: 0,
+              }}
               onClick={() => setIsOpened(false)}
             >
               <FormattedMessage id="button.cancel" />

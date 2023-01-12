@@ -3,7 +3,9 @@ import WebViewer from "@pdftron/webviewer";
 import { useNavigate, useParams } from "react-router";
 import Book from "../../@Types/Book";
 import { getBook } from "../../action/Books/action";
-import { Button } from "reactstrap";
+import IconNavArrowLeft from "../modules/IconNavArrowLeft";
+import Ellipse1 from "../modules/Ellipse1";
+import { FormattedMessage } from "react-intl";
 
 function PdfFiles() {
   const viewerDiv = useRef<HTMLDivElement>(null);
@@ -28,15 +30,17 @@ function PdfFiles() {
   }, [book]); // function for lecteur pdf.
 
   return (
-    <div className="webviewer" ref={viewerDiv}>
-      <Button className="btn4-book" onClick={() => navigate(-1)}>
-        <img
-          className="img-flech"
-          src="/img/icons/back grey.png"
-          height={40}
-          width={40}
-        />
-      </Button>
+    <div
+      className="h-[690px] w-[1285px] top-[50px] left-[247px] absolute"
+      ref={viewerDiv}
+    >
+      <div onClick={() => navigate(-1)} style={{ cursor: "pointer" }}>
+        <IconNavArrowLeft />
+        <Ellipse1 />
+        <p className="top-[82px] left-[65px] absolute capitalize text-[#897647]">
+          <FormattedMessage id="bookdetails.button" />
+        </p>
+      </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import React from "react";
 const IconMenu = () => {
   return (
     <svg
-      className="w-[21.24px] h-[16.52px] top-[201px] left-[1344.7px] absolute"
+      className="w-[21.24px] h-[16.52px] top-[60px] left-[890px] absolute"
       width={24}
       height={19}
       viewBox="0 0 24 19"
