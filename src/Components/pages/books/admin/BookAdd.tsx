@@ -138,7 +138,7 @@ const BookAdd = (props: BookAddPropsType) => {
         <FontAwesomeIcon icon={faAdd} />
       </Button>
       <Modal
-      className="font-['Poppins']"
+        className="font-['Poppins']"
         centered
         scrollable
         isOpen={isOpened}
@@ -251,9 +251,8 @@ const BookAdd = (props: BookAddPropsType) => {
         <ModalFooter>
           <Button
             style={{
-              backgroundColor: "lightgray",
+              backgroundColor: "gray",
               border: 0,
-              fontFamily: "Caveat Brush",
             }}
             onClick={submit}
             disabled={
@@ -270,9 +269,8 @@ const BookAdd = (props: BookAddPropsType) => {
           </Button>{" "}
           <Button
             style={{
-              backgroundColor: "lightgray",
+              backgroundColor: "gray",
               border: 0,
-              fontFamily: "Caveat Brush",
             }}
             onClick={() => setIsOpened(false)}
           >

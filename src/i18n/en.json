@@ -94,5 +94,10 @@
   "search.page.title": "*You are looking for :",
   "bookdetails.button": "backtrack",
   "affichageList.title": "View by List",
-  "affichageIcon.title": "Display by icons"
+  "affichageIcon.title": "Display by icons",
+  "accueil.title.book1": "The new French book",
+  "accueil.title.book2": "The new English book",
+  "sidebar.button": "Quiz",
+  "sidebar.button.login": "Login",
+  "sidebar.button.logout": "Logout"
 }

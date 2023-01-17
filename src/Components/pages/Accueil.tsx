@@ -8,7 +8,6 @@ import { Link, useParams } from "react-router-dom";
 import Book from "../../@Types/Book";
 import { getBooks } from "../../action/Books/action";
 import Rectangle73 from "../modules/Rectangle73";
-import Line1 from "../modules/Line1";
 import Vector3 from "../modules/Vector3";
 import IconMenu from "../modules/IconMenu";
 import IconViewGrid from "../modules/IconViewGrid";
@@ -35,7 +34,7 @@ const Accueil = (props: props) => {
       }}
     >
       <div
-        className="w-[450px] h-[173px] absolute top-[180px] left-[620px] rounded-[30px] bg-[#f8af8f]"
+        className="w-[450px] h-[173px] absolute top-[181px] left-[620px] rounded-[30px] bg-[#f8af8f]"
         style={{
           boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
         }}
@@ -120,11 +119,12 @@ const Accueil = (props: props) => {
               }}
               src={book.coverPath}
               alt={book.title}
+              key={book._id}
             />
           </Link>
           <p className="whitespace-pre-wrap absolute top-[210px] left-[270px] w-[207px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] font-medium text-left capitalize text-black">
             <span className="whitespace-pre-wrap w-[207px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] font-medium text-left capitalize text-black">
-              Le nouveau livre en français
+              <FormattedMessage id="accueil.title.book1" />
             </span>
           </p>
           <p className="whitespace-pre-wrap absolute top-[280px] left-[250px] font-['Poppins'] text-sm leading-[normal] tracking-[0.03em] italic text-left capitalize text-[#585757]"></p>
@@ -139,13 +139,14 @@ const Accueil = (props: props) => {
               style={{
                 boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
               }}
-              src={book.coverPath}
-              alt={book.title}
+              src="/img/rectangle10.jpeg"
+              alt=""
+              key={book._id}
             />
           </Link>
           <p className="whitespace-pre-wrap absolute top-[210px] left-[820px] w-[207px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] font-medium text-left capitalize text-black">
             <span className="whitespace-pre-wrap w-[207px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] font-medium text-left capitalize text-black">
-              Le nouveau livre en français
+              <FormattedMessage id="accueil.title.book2" />
             </span>
           </p>
 

@@ -30,7 +30,7 @@
 }
 
 .pro-sidebar > .pro-sidebar-inner {
-  background: rgba(4, 4, 3, 0.472);
+  background: rgb(156 163 175);
   height: 1024px;
   position: relative;
   z-index: 101;
@@ -280,7 +280,7 @@
 }
 .pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item {
   position: relative;
-  background-color: #bcbcbcc8;
+  background-color: #9492928b;
 }
 .pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item > div > ul {
   padding-top: 15px;
@@ -389,8 +389,8 @@
   .pro-arrow {
   display: inline-block;
   border-style: solid;
-  border-color: #adadad;
-  border-width: 0 2px 2px 0;
+  border-color: #ffffff;
+  border-width: 0 3px 3px 0;
   padding: 2.5px;
   vertical-align: middle;
   transition: transform 0.3s;

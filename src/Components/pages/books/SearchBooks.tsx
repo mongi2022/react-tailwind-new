@@ -47,13 +47,13 @@ const SearchBooks = () => {
         <IconViewGrid />
       </Link>
 
-      <div className="container p-3">
+      <div className="container p-3 top-[100px] absolute">
         <div className="row">
           {books.map((book) => (
             <div className="col-md-2" style={{ padding: 40 }} key={book._id}>
               <Link to={"/bookdetails/" + book._id}>
                 <img
-                  className="top-[140px] p-1 relative"
+                  className="p-1 relative"
                   style={{
                     boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.70)",
                   }}

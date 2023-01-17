@@ -1,10 +1,63 @@
+import axios from "axios";
+import { useState, ChangeEvent } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { ProSidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  Button,
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+} from "reactstrap";
 import "../parts/Sidebar.css";
 
 const Sidebar = () => {
   const intl = useIntl();
+  const navigate = useNavigate();
+
+  const [open, setOpen] = useState<boolean>(false);
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  const changeUsername = (e: ChangeEvent<HTMLInputElement>) =>
+    setUsername(e.target.value);
+
+  const changePassword = (e: ChangeEvent<HTMLInputElement>) =>
+    setPassword(e.target.value);
+
+  const toggleModal = (e: any) => {
+    setOpen(!open);
+    e.preventDefault();
+  };
+
+  const handelClose = () => setOpen(false);
+
+  const handleLogin = (e: any) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:5000/auth/login", { username, password })
+      .then(({ data }) => {
+        localStorage.setItem("access_token", data.access_token);
+        navigate("/home");
+        handelClose();
+        console.log(data);
+      })
+      .catch((e) => {
+        console.log(e.response.data.message);
+      });
+  }; // function for login admin.
+
+  const logout = () => {
+    localStorage.removeItem("access_token");
+    navigate("/");
+    window.location.reload();
+  }; // function for logout admin.
+
   return (
     <div className=" absolute top-[-108px] left-0 rounded-tr-[57px]">
       <ProSidebar>
@@ -139,6 +192,94 @@ const Sidebar = () => {
             </MenuItem>
           </SubMenu>
         </Menu>
+        {localStorage.getItem("access_token") ? (
+          <Button
+            onClick={logout}
+            style={{ borderRadius: 10 }}
+            className="w-[140px] h-[60px] top-[625px] left-[50px] absolute font-['MonteCarlo']"
+          >
+            Quiz
+            <br/>
+            <FormattedMessage id="sidebar.button.logout" />
+          </Button>
+        ) : (
+          <Button
+            className="w-[140px] h-[60px] top-[625px] left-[50px] absolute font-['MonteCarlo']"
+            onClick={toggleModal}
+            style={{ borderRadius: 10 }}
+          >
+            Quiz
+            <br />
+            <FormattedMessage id="sidebar.button.login" />
+          </Button>
+        )}
+
+        {open ? (
+          <Modal
+            className="font-['MonteCarlo']"
+            centered
+            scrollable
+            isOpen={open}
+            toggle={() => setOpen(false)}
+          >
+            <Form onSubmit={(e) => handleLogin(e)}>
+              <ModalHeader
+                toggle={() => setOpen(!open)}
+                style={{ backgroundColor: "gray", color: "white" }}
+              >
+                <FormattedMessage id="modal.title.button.login" />
+              </ModalHeader>
+              <ModalBody>
+                <FormGroup floating>
+                  <Input
+                    value={username}
+                    id="username"
+                    name="username"
+                    type="text"
+                    onChange={changeUsername}
+                  />
+                  <Label for="username">
+                    <FormattedMessage id="user.username" />
+                  </Label>
+                </FormGroup>
+                <FormGroup floating>
+                  <Input
+                    value={password}
+                    id="password"
+                    name="password"
+                    type="password"
+                    onChange={changePassword}
+                  />
+                  <Label for="password">
+                    <FormattedMessage id="user.password" />
+                  </Label>
+                </FormGroup>
+              </ModalBody>
+              <ModalFooter>
+                <Button
+                  style={{
+                    backgroundColor: "gray",
+                    border: 0,
+                  }}
+                  type="submit"
+                >
+                  <FormattedMessage id="button.confirm" />
+                </Button>
+                <Button
+                  style={{
+                    backgroundColor: "gray",
+                    border: 0,
+                  }}
+                  onClick={handelClose}
+                >
+                  <FormattedMessage id="button.cancel" />
+                </Button>
+              </ModalFooter>
+            </Form>
+          </Modal>
+        ) : (
+          <></>
+        )}
       </ProSidebar>
     </div>
   );

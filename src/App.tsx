@@ -13,6 +13,8 @@ import BookDetails from "./Components/BookDetails";
 import AdminPage from "./Components/AdminPage";
 import Theme5 from "./Components/Theme5";
 import AdminP2 from "./Components/AdminP2";
+import MediaQuery from "react-responsive";
+import Home from "./Components/pages/Home";
 
 interface Messages {
   "login.title": string;
@@ -40,34 +42,43 @@ function App() {
   return (
     <>
       <IntlProvider messages={messages} locale={language} defaultLocale="en">
-        <Navbard lang={lang} />
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-md-3">
-              <Sidebar />
-            </div>
-            <div className="col-12 col-md-9">
-              <Routes>
-                <Route path="/" element={<Accueil />} />
-                <Route path="/bookdetails/:bookId" element={<BookDetails />} />
-                <Route path="/adminpage/:them" element={<AdminPage />} />
-                <Route path="/adminpage" element={<AdminPage />} />
-                <Route path="/adduser2" element={<AddUser2 />} />
-                <Route path="/adminp2" element={<AdminP2 />} />
-                <Route path="/pdffiles/:bookId" element={<PdfFiles />} />
-                <Route path="/theme5" element={<Theme5 />} />
-                <Route path="/booksSearch/:search" element={<SearchBooks />} />
+        <MediaQuery minWidth={1250}>
+          <Navbard lang={lang} />
+          <div className="container">
+            <div className="row">
+              <div className="col-12 col-md-3">
+                <Sidebar />
+              </div>
+              <div className="col-12 col-md-9">
+                <Routes>
+                  <Route path="/" element={<Accueil />} />
+                  <Route
+                    path="/bookdetails/:bookId"
+                    element={<BookDetails />}
+                  />
+                  <Route path="/adminpage/:them" element={<AdminPage />} />
+                  <Route path="/adminpage" element={<AdminPage />} />
+                  <Route path="/adduser2" element={<AddUser2 />} />
+                  <Route path="/adminp2" element={<AdminP2 />} />
+                  <Route path="/pdffiles/:bookId" element={<PdfFiles />} />
+                  <Route path="/theme5" element={<Theme5 />} />
+                  <Route
+                    path="/booksSearch/:search"
+                    element={<SearchBooks />}
+                  />
+                  <Route path="/home" element={<Home/>} />
 
-                {/*  <Route path="/book/:bookId" element={<Book />} />
+                  {/*  <Route path="/book/:bookId" element={<Book />} />
                 <Route path="/admin/books" element={<BooksTable />} />
                 <Route path="/admin/users" element={<Users />} />
                 <Route path="/affichagelist" element={<AffichageList />} />
                 <Route path="/affichagenor/:them" element={<AffichageNor />} />
                 <Route path="/accueil" element={<Accueil />} /> */}
-              </Routes>
+                </Routes>
+              </div>
             </div>
           </div>
-        </div>
+        </MediaQuery>
       </IntlProvider>
     </>
   );

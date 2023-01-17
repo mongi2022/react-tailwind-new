@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@coreui/react": "^4.5.1",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
@@ -27,6 +28,7 @@
     "react-intl": "^6.0.4",
     "react-js-pagination": "^3.0.3",
     "react-pro-sidebar": "^0.7.1",
+    "react-responsive": "^9.0.2",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",

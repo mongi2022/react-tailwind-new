@@ -22,6 +22,8 @@ import {
 } from "reactstrap";
 import IconHome from "../modules/IconHome";
 import IconSearch from "../modules/IconSearch";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 interface NavbardInterfaceProps {
   lang: Function;
@@ -39,6 +41,12 @@ export default function Navbard(props: NavbardInterfaceProps) {
   const [password, setPassword] = useState<string>("");
 
   const [search, setSearch] = useState<string>("");
+
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
 
   const changeUsername = (e: ChangeEvent<HTMLInputElement>) =>
     setUsername(e.target.value);
@@ -77,6 +85,8 @@ export default function Navbard(props: NavbardInterfaceProps) {
     navigate("/booksSearch/" + search);
   }; // for search bar.
 
+  const eye = <FontAwesomeIcon icon={faEye} />;
+
   return (
     <div className="h-[50px] bg-gray-400">
       <Navbar expand="md" light responsive>
@@ -103,10 +113,10 @@ export default function Navbard(props: NavbardInterfaceProps) {
         <Link to="/">
           <img
             className="left-[750px] top-[6px] absolute"
-            src="img/pagehome/loger.png"
+            src="/img/pagehome/loger.png"
             height={35}
             width={37}
-            alt="accimg"
+            alt="img"
           />
         </Link>
 
@@ -254,6 +264,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
         <Modal centered scrollable isOpen={open} toggle={() => setOpen(false)}>
           <Form onSubmit={(e) => handleLogin(e)}>
             <ModalHeader
+              className="font-['MonteCarlo']"
               toggle={() => setOpen(!open)}
               style={{ backgroundColor: "gray", color: "white" }}
             >
@@ -268,7 +279,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
                   type="text"
                   onChange={changeUsername}
                 />
-                <Label for="username">
+                <Label className="font-['MonteCarlo']" for="username">
                   <FormattedMessage id="user.username" />
                 </Label>
               </FormGroup>
@@ -277,30 +288,38 @@ export default function Navbard(props: NavbardInterfaceProps) {
                   value={password}
                   id="password"
                   name="password"
-                  type="password"
+                  type={passwordShown ? "text" : "password"}
                   onChange={changePassword}
                 />
-                <Label for="password">
+                <i
+                  className="absolute h-[20px] w-[20px] top-[18px] right-[16px] cursor-pointer"
+                  style={{ color: "gray" }}
+                  onClick={togglePasswordVisiblity}
+                >
+                  {eye}
+                </i>
+                <Label className="font-['MonteCarlo']" for="password">
                   <FormattedMessage id="user.password" />
                 </Label>
               </FormGroup>
             </ModalBody>
             <ModalFooter>
               <Button
+                className="font-['MonteCarlo']"
                 style={{
-                  backgroundColor: "lightgray",
+                  backgroundColor: "gray",
                   border: 0,
-                  fontFamily: "Caveat Brush",
                 }}
                 type="submit"
+                disabled={!username || !password}
               >
                 <FormattedMessage id="button.confirm" />
               </Button>
               <Button
+                className="font-['MonteCarlo']"
                 style={{
-                  backgroundColor: "lightgray",
+                  backgroundColor: "gray",
                   border: 0,
-                  fontFamily: "Caveat Brush",
                 }}
                 onClick={handelClose}
               >

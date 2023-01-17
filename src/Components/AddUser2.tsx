@@ -34,12 +34,18 @@ const AddUser2 = (props: Props) => {
       <Container className="top-[250px]  absolute">
         <UserAdd refresh={() => getUsers(setUsers)} />
 
-        <Table className="left-[150px] w-[700px] absolute" bordered responsive hover>
+        <Table
+          className="left-[230px] w-[700px] absolute"
+          bordered
+          responsive
+          hover
+        >
           <thead>
             <tr>
               <th
-              className="font-['Poppins']"
-              style={{ color: "#0e0e0ee7", backgroundColor: "lightgray" }}>
+                className="font-['Poppins']"
+                style={{ color: "#0e0e0ee7", backgroundColor: "lightgray" }}
+              >
                 <FormattedMessage id="user.username" />
               </th>
               <th
@@ -59,7 +65,7 @@ const AddUser2 = (props: Props) => {
               users.map((user) => (
                 <tr key={user._id}>
                   <td
-                  className="font-['Poppins']"
+                    className="font-['Poppins']"
                     style={{
                       color: "#0e0e0ee7",
                       fontSize: 18,

@@ -14,6 +14,7 @@ import {
   ModalHeader,
 } from "reactstrap";
 import { addUser } from "../../../action/Users/action";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 interface UserAddPropsType {
   refresh: () => void;
@@ -42,6 +43,13 @@ const UserAdd = (props: UserAddPropsType) => {
     setUsername("");
     setPassword("");
   };
+
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
+  const eye = <FontAwesomeIcon icon={faEye} />;
 
   return (
     <>
@@ -85,9 +93,16 @@ const UserAdd = (props: UserAddPropsType) => {
                 value={password}
                 id="password"
                 name="password"
-                type="password"
+                type={passwordShown ? "text" : "password"}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              <i
+                className="absolute h-[20px] w-[20px] top-[18px] right-[16px] cursor-pointer"
+                style={{ color: "gray" }}
+                onClick={togglePasswordVisiblity}
+              >
+                {eye}
+              </i>
               <Label for="password">
                 <FormattedMessage id="user.password" />
               </Label>
@@ -96,7 +111,7 @@ const UserAdd = (props: UserAddPropsType) => {
           <ModalFooter>
             <Button
               style={{
-                backgroundColor: "lightgray",
+                backgroundColor: "gray",
                 border: 0,
               }}
               type="submit"
@@ -106,7 +121,7 @@ const UserAdd = (props: UserAddPropsType) => {
             </Button>{" "}
             <Button
               style={{
-                backgroundColor: "lightgray",
+                backgroundColor: "gray",
                 border: 0,
               }}
               onClick={() => setIsOpened(false)}

@@ -1,6 +1,4 @@
 import React from "react";
-import IconSearch from "./modules/IconSearch";
-import Line1 from "./modules/Line1";
 import IconMenu from "./modules/IconMenu";
 import IconViewGrid from "./modules/IconViewGrid";
 import { Link, useParams } from "react-router-dom";
@@ -8,7 +6,7 @@ import { FormattedMessage } from "react-intl";
 import { getBooks } from "../action/Books/action";
 import Book from "../@Types/Book";
 import { useEffect, useState } from "react";
-import { ListGroup, ListGroupItem, Table } from "reactstrap";
+import { Container, Table } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBoxOpen } from "@fortawesome/free-solid-svg-icons";
 interface Props {}
@@ -41,137 +39,122 @@ const Theme5 = (props: Props) => {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <ListGroup style={{ paddingTop: 160 }}>
-              <ListGroupItem>
-                <Table bordered responsive hover>
-                  <thead style={{ backgroundColor: "lightgray" }}>
-                    <tr>
-                      <th>
-                        <h5
+            <Container style={{ paddingTop: 160 }}>
+              <Table bordered responsive hover>
+                <thead style={{ backgroundColor: "lightgray" }}>
+                  <tr>
+                    <th
+                      className="font-['Poppins']"
+                      style={{
+                        color: "#0e0e0ee7",
+                        fontSize: 18,
+                      }}
+                    >
+                      <FormattedMessage id="book.title" />
+                    </th>
+                    <th
+                      className="font-['Poppins']"
+                      style={{
+                        color: "#0e0e0ee7",
+                        fontSize: 18,
+                      }}
+                    >
+                      <FormattedMessage id="book.author" />
+                    </th>
+                    <th
+                      className="font-['Poppins']"
+                      style={{
+                        textAlign: "center",
+                        color: "#0e0e0ee7",
+                        fontSize: 18,
+                      }}
+                    >
+                      <FormattedMessage id="book.coverpath" />
+                    </th>
+                    <th
+                      className="font-['Poppins']"
+                      style={{
+                        textAlign: "center",
+                        color: "#0e0e0ee7",
+                        fontSize: 18,
+                      }}
+                    >
+                      <FormattedMessage id="book.language" />
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {books.length ? (
+                    books.map((book) => (
+                      <tr key={book._id}>
+                        <th
                           className="font-['Poppins']"
                           style={{
-                            textAlign: "center",
-                            color: "#0e0e0ee7",
-                            fontSize: 18,
+                            color: "black",
+                            fontSize: 15,
                           }}
                         >
-                          <FormattedMessage id="book.title" />
-                        </h5>
-                      </th>
-                      <th>
-                        <h5
-                          className="font-['Poppins']"
-                          style={{
-                            textAlign: "center",
-                            color: "#0e0e0ee7",
-                            fontSize: 18,
-                          }}
-                        >
-                          <FormattedMessage id="book.coverpath" />
-                        </h5>
-                      </th>
-                      <th>
-                        <h5
-                          className="font-['Poppins']"
-                          style={{
-                            textAlign: "center",
-                            color: "#0e0e0ee7",
-                            fontSize: 18,
-                          }}
-                        >
-                          <FormattedMessage id="book.author" />
-                        </h5>
-                      </th>
-                      <th>
-                        <h5
-                          className="font-['Poppins']"
-                          style={{
-                            textAlign: "center",
-                            color: "#0e0e0ee7",
-                            fontSize: 18,
-                          }}
-                        >
-                          <FormattedMessage id="book.language" />
-                        </h5>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {books.length ? (
-                      books.map((book) => (
-                        <tr key={book._id}>
-                          <th
-                            className="font-['Poppins']"
-                            style={{
-                              textAlign: "center",
-                              color: "black",
-                              paddingLeft: 5,
-                              fontSize: 15,
-                            }}
+                          {" "}
+                          <Link
+                            style={{ textDecoration: "none", color: "black" }}
+                            to={"/bookdetails/" + book._id}
                           >
-                            {" "}
-                            <Link
-                              style={{ textDecoration: "none", color: "black" }}
-                              to={"/bookdetails/" + book._id}
-                            >
-                              {book.title}
-                            </Link>
-                          </th>
-                          <th style={{ color: "black", fontSize: 13 }}>
-                            <Link
-                              style={{ textDecoration: "none", color: "black" }}
-                              to={"/bookdetails/" + book._id}
-                            >
-                              <img
-                                alt={book.title}
-                                src={book.coverPath}
-                                style={{
-                                  width: 30,
-                                  height: 40,
-                                  textAlign: "center",
-                                }}
-                              />
-                            </Link>
-                          </th>
+                            {book.title}
+                          </Link>
+                        </th>
+                        <th
+                          className="font-['Poppins']"
+                          style={{
+                            color: "black",
+                            fontSize: 13,
+                          }}
+                        >
+                          {book.author}
+                        </th>
+                        <th style={{ color: "black", fontSize: 13 }}>
+                          <Link
+                            style={{ textDecoration: "none", color: "black" }}
+                            to={"/bookdetails/" + book._id}
+                          >
+                            <img
+                              alt={book.title}
+                              src={book.coverPath}
+                              style={{
+                                width: 30,
+                                height: 40,
+                                textAlign: "center",
+                              }}
+                            />
+                          </Link>
+                        </th>
 
-                          <th
-                            className="font-['Poppins']"
-                            style={{
-                              color: "black",
-                              fontSize: 13,
-                              textAlign: "center",
-                            }}
-                          >
-                            {book.author}
-                          </th>
-                          <th
-                            style={{
-                              color: "black",
-                              fontSize: 13,
-                              textAlign: "center",
-                            }}
-                          >
-                            {book.language}
-                          </th>
-                        </tr>
-                      ))
-                    ) : (
-                      <tr>
-                        <td
-                          colSpan={7}
-                          className="text-center p-5"
-                          style={{ color: "#0e0e0ee7" }}
+                        <th
+                          style={{
+                            color: "black",
+                            fontSize: 13,
+                            textAlign: "center",
+                          }}
                         >
-                          <FontAwesomeIcon icon={faBoxOpen} size="4x" />
-                          <br />
-                          <FormattedMessage id="page.users.no-data" />
-                        </td>
+                          {book.language}
+                        </th>
                       </tr>
-                    )}
-                  </tbody>
-                </Table>
-              </ListGroupItem>
-            </ListGroup>
+                    ))
+                  ) : (
+                    <tr>
+                      <td
+                        colSpan={7}
+                        className="text-center p-5"
+                        style={{ color: "#0e0e0ee7" }}
+                      >
+                        <FontAwesomeIcon icon={faBoxOpen} size="4x" />
+                        <br />
+                        <FormattedMessage id="page.users.no-data" />
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </Table>
+            </Container>
           </div>
         </div>
       </div>
