@@ -1,8 +1,29 @@
 import axios from "axios";
 import { useState, ChangeEvent } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import './Navbar.css'
+import { Link, useNavigate } from "react-router-dom";
+import {
+  Button,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  Nav,
+  Navbar,
+  NavbarBrand,
+  UncontrolledDropdown,
+} from "reactstrap";
+import IconHome from "../modules/IconHome";
+import IconSearch from "../modules/IconSearch";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 interface NavbardInterfaceProps {
   lang: Function;
@@ -20,6 +41,12 @@ export default function Navbard(props: NavbardInterfaceProps) {
   const [password, setPassword] = useState<string>("");
 
   const [search, setSearch] = useState<string>("");
+
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
 
   const changeUsername = (e: ChangeEvent<HTMLInputElement>) =>
     setUsername(e.target.value);
@@ -47,9 +74,10 @@ export default function Navbard(props: NavbardInterfaceProps) {
         console.log(e.response.data.message);
       });
   }; // function for login admin.
+
   const logout = () => {
     localStorage.removeItem("access_token");
-    navigate("/nav");
+    navigate("/");
     window.location.reload();
   }; // function for logout admin.
 
@@ -57,36 +85,252 @@ export default function Navbard(props: NavbardInterfaceProps) {
     navigate("/booksSearch/" + search);
   }; // for search bar.
 
+  const eye = <FontAwesomeIcon icon={faEye} />;
+
   return (
-   
-<nav className="flex items-center justify-between bg-color p-3">
-  <div className="flex items-center flex-shrink-0 text-white mr-6">
-    <svg className="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
-    <span className="font-semibold text-xl tracking-tight">Logo</span>
-  </div>
-  <div className="block lg:hidden">
-    <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-      <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-    </button>
-  </div>
-  <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-    <div className="text-sm lg:flex-grow">
-      < Link to="/acclang" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-        Acceuil Langue
-      </Link>
-      <Link to="/adduser"  className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-        Ajout Utilisateur
-      </Link>
-      <Link to="/addbook" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
-        Ajout livre
-      </Link>
-    </div>
-    <div>
-      <a href="#" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Download</a>
-    </div>
-  </div>
-</nav>
+    <div className="h-[50px] bg-gray-400">
+      <Navbar expand="md" light responsive>
+        <NavbarBrand>
+          <p className="whitespace-pre-wrap absolute cursor-pointer top-[10px] left-[45px] h-[61px] w-[135px]  font-['MonteCarlo'] text-2xl leading-[normal] text-left text-white">
+            <FormattedMessage id="navbar.title" />
+          </p>
+          <IconHome />
+        </NavbarBrand>
 
+        <Form onSubmit={(e) => e.preventDefault()}>
+          <Input
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-[450px] h-11 absolute top-[3px] left-[270px] rounded-[20px] bg-[#e7eaec]"
+            type="text"
+            placeholder={intl.formatMessage({ id: "placeholder" })}
+          />
 
+          <button onClick={handleSearch}>
+            <IconSearch />
+          </button>
+        </Form>
+
+        <Link to="/">
+          <img
+            className="left-[750px] top-[6px] absolute"
+            src="/img/pagehome/loger.png"
+            height={35}
+            width={37}
+            alt="img"
+          />
+        </Link>
+
+        <Nav navbar>
+          <UncontrolledDropdown
+            className="left-[820px] top-[-1px] absolute"
+            inNavbar
+            nav
+          >
+            <DropdownToggle nav>
+              <img
+                src="/img/pagehome/traduction.png"
+                alt="img"
+                height={30}
+                width={34}
+              />
+            </DropdownToggle>
+            <DropdownMenu
+              style={{
+                backgroundColor: "lightgray",
+                height: 65,
+                margin: 2,
+                padding: 7,
+              }}
+            >
+              <DropdownItem
+                onClick={() => {
+                  lang("fr");
+                }}
+              >
+                <img
+                  src="/img/icons/la-france.png"
+                  alt="img"
+                  height={20}
+                  width={20}
+                />
+              </DropdownItem>
+              <DropdownItem
+                onClick={() => {
+                  lang("en");
+                }}
+              >
+                <img
+                  src="/img/icons/royaume-uni.png"
+                  alt="img"
+                  height={20}
+                  width={20}
+                />
+              </DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+
+          {localStorage.getItem("access_token") ? (
+            <>
+              <UncontrolledDropdown
+                className="left-[890px] top-[-3px] absolute"
+                inNavbar
+                nav
+              >
+                <DropdownToggle nav>
+                  <img
+                    src="/img/pagehome/settings.png"
+                    alt="img"
+                    height={37}
+                    width={39}
+                  />
+                </DropdownToggle>
+                <DropdownMenu
+                  style={{
+                    backgroundColor: "lightgray",
+                    height: 75,
+                    padding: 1,
+                  }}
+                  className="w-[20px] h-[85px] absolute"
+                >
+                  <DropdownItem>
+                    {" "}
+                    <Link
+                      to="/adminp2"
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <img
+                        src="/img/icons/book.png"
+                        alt="img"
+                        height={20}
+                        width={30}
+                      />
+                    </Link>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <Link
+                      to="/adduser2"
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <img
+                        src="/img/icons/add-user.png"
+                        alt="img"
+                        height={20}
+                        width={30}
+                      />
+                    </Link>
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+            </>
+          ) : (
+            <> </>
+          )}
+        </Nav>
+
+        {localStorage.getItem("access_token") ? (
+          <Button
+            className="w-[40px] h-[40px] left-[1440px] top-[-15px] absolute"
+            onClick={logout}
+            style={{
+              backgroundColor: "#e6e1dc00",
+              border: "none",
+            }}
+          >
+            <img
+              className="h-[35px] w-[35px] absolute"
+              src="/img/pagehome/logout.png"
+              alt="img"
+            />
+          </Button>
+        ) : (
+          <Button
+            className="w-[40px] h-[40px] left-[1440px] top-[-17px] absolute"
+            onClick={toggleModal}
+            style={{
+              backgroundColor: "#e6e1dc00",
+              border: "none",
+            }}
+          >
+            <img
+              className="h-[45px] w-[45px] absolute"
+              src="/img/pagehome/utilisateur.png"
+              alt="img"
+            />
+          </Button>
+        )}
+      </Navbar>
+
+      {open ? (
+        <Modal centered scrollable isOpen={open} toggle={() => setOpen(false)}>
+          <Form onSubmit={(e) => handleLogin(e)}>
+            <ModalHeader
+              className="font-['MonteCarlo']"
+              toggle={() => setOpen(!open)}
+              style={{ backgroundColor: "gray", color: "white" }}
+            >
+              <FormattedMessage id="modal.title.button.login" />
+            </ModalHeader>
+            <ModalBody>
+              <FormGroup floating>
+                <Input
+                  value={username}
+                  id="username"
+                  name="username"
+                  type="text"
+                  onChange={changeUsername}
+                />
+                <Label className="font-['MonteCarlo']" for="username">
+                  <FormattedMessage id="user.username" />
+                </Label>
+              </FormGroup>
+              <FormGroup floating>
+                <Input
+                  value={password}
+                  id="password"
+                  name="password"
+                  type={passwordShown ? "text" : "password"}
+                  onChange={changePassword}
+                />
+                <i
+                  className="absolute h-[20px] w-[20px] top-[18px] right-[16px] cursor-pointer"
+                  style={{ color: "gray" }}
+                  onClick={togglePasswordVisiblity}
+                >
+                  {eye}
+                </i>
+                <Label className="font-['MonteCarlo']" for="password">
+                  <FormattedMessage id="user.password" />
+                </Label>
+              </FormGroup>
+            </ModalBody>
+            <ModalFooter>
+              <Button
+                className="font-['MonteCarlo']"
+                style={{
+                  backgroundColor: "gray",
+                  border: 0,
+                }}
+                type="submit"
+                disabled={!username || !password}
+              >
+                <FormattedMessage id="button.confirm" />
+              </Button>
+              <Button
+                className="font-['MonteCarlo']"
+                style={{
+                  backgroundColor: "gray",
+                  border: 0,
+                }}
+                onClick={handelClose}
+              >
+                <FormattedMessage id="button.cancel" />
+              </Button>
+            </ModalFooter>
+          </Form>
+        </Modal>
+      ) : (
+        <></>
+      )}
+    </div>
   );
 }

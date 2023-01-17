@@ -88,5 +88,16 @@
   "theme2": "Formation Initiale",
   "theme3": "Psychologie Humaine",
   "theme4": "Divers",
-  "placeholder": "Chercher ici..."
+  "placeholder": "Chercher ici...",
+  "title.acc": "Les nouveautés à la bibliothèque",
+  "title2.acc": "Tous les thémes",
+  "search.page.title": "*Vous recherche :",
+  "bookdetails.button": "retour en arrière",
+  "affichageList.title": "Affichage par Liste",
+  "affichageIcon.title": "Affichage par icons",
+  "accueil.title.book1": "Le nouveau livre de français",
+  "accueil.title.book2": "Le nouveau livre d'anglais",
+  "sidebar.button": "Questionnaire",
+  "sidebar.button.login": "Connexion",
+  "sidebar.button.logout": "Déconnexion"
 }

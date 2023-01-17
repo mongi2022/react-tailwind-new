@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { FormattedMessage } from "react-intl";
 import { Link, useParams } from "react-router-dom";
-import { Card, CardImg } from "reactstrap";
 import Book from "../../../@Types/Book";
+import IconMenu from "../../modules/IconMenu";
+import IconViewGrid from "../../modules/IconViewGrid";
 
 const SearchBooks = () => {
   let { search } = useParams(); // params for search books.
@@ -27,32 +29,42 @@ const SearchBooks = () => {
   }, [search]); // function for search bar.
 
   return (
-    <div className="container p-3 books">
-      <div className="row">
-        {books.map((book) => (
-          <div className="col-3" key={book._id}>
-            <br />
-            <Card
-              style={{
-                height: 296,
-                width: 200,
-                marginTop: 55,
-                border: 0,
-                marginBottom: -15,
-              }}
-            >
-              <Link to={"/book/" + book._id}>
-                <CardImg
-                  alt={book.title}
+    <div
+      className="box-border block left-[-147px] w-[1285px] h-[692px] relative overflow-x-hidden rounded-sm bg-[#f3f3f3]"
+      style={{
+        boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
+      }}
+    >
+      <p className="whitespace-pre-wrap absolute top-[60px] left-[10px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
+        <FormattedMessage id="search.page.title" />
+      </p>
+
+      <Link to="/theme5">
+        <IconMenu />
+      </Link>
+
+      <Link to="/adminpage">
+        <IconViewGrid />
+      </Link>
+
+      <div className="container p-3 top-[100px] absolute">
+        <div className="row">
+          {books.map((book) => (
+            <div className="col-md-2" style={{ padding: 40 }} key={book._id}>
+              <Link to={"/bookdetails/" + book._id}>
+                <img
+                  className="p-1 relative"
+                  style={{
+                    boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.70)",
+                  }}
                   src={book.coverPath}
-                  top
-                  width="100%"
+                  alt={book.title}
+                  key={book._id}
                 />
               </Link>
-            </Card>
-            <img src="/img/raff.jpg" />
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

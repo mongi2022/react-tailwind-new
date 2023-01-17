@@ -3,8 +3,8 @@ import React from "react";
 const Line3 = () => {
   return (
     <svg
-      className="absolute top-[718px] left-[52px]"
-      width={203}
+      className="absolute top-[718px] left-[40px]"
+      width={200}
       height={1}
       viewBox="0 0 203 1"
       fill="none"

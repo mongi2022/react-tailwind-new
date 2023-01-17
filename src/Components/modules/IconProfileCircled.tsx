@@ -1,9 +1,10 @@
 import React from "react";
+import { logout } from "../../action/Auth/action";
 
 const IconProfileCircled = () => {
   return (
     <svg
-      className="w-[33px] h-[33px] top-[47px] left-[1344px] absolute"
+      className="w-[33px] h-[33px] top-[47px] left-[950px] absolute"
       width={35}
       height={35}
       viewBox="0 0 35 35"

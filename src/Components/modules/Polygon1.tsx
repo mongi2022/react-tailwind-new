@@ -3,7 +3,7 @@ import React from "react";
 const Polygon1 = () => {
   return (
     <svg
-      className=" w-[17px] h-[13px] absolute top-[60px] left-[1290px]"
+      className=" w-[17px] h-[13px] absolute top-[60px] left-[1170px]"
       width={15}
       height={10}
       viewBox="0 0 15 10"

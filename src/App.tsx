@@ -1,25 +1,20 @@
-import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Sidebar from "./Components/parts/Sidebar";
 import Navbard from "./Components/parts/Navbar";
-import Books from "./Components/pages/books/Books";
 import PdfFiles from "./Components/pages/PdfFiles";
-import Book from "./Components/pages/books/Book";
-import Users from "./Components/pages/users/User";
-import BooksTable from "./Components/pages/books/admin/BooksTable";
-import Home from "./Components/pages/Home";
-import AffichageList from "./Components/pages/AffichageList";
 import Accueil from "./Components/pages/Accueil";
 import SearchBooks from "./Components/pages/books/SearchBooks";
-import AffichageNor from "./Components/pages/AffichageNor";
-
 import en from "./i18n/en.json";
 import fr from "./i18n/fr.json";
 import { IntlProvider } from "react-intl";
 import { useState } from "react";
-import AccLang from "./Components/AccLang";
-import AddUser from "./Components/AddUser";
-import AddBook from "./Components/AddBook";
+import AddUser2 from "./Components/AddUser2";
+import BookDetails from "./Components/BookDetails";
+import AdminPage from "./Components/AdminPage";
+import Theme5 from "./Components/Theme5";
+import AdminP2 from "./Components/AdminP2";
+import MediaQuery from "react-responsive";
+import Home from "./Components/pages/Home";
 
 interface Messages {
   "login.title": string;
@@ -47,20 +42,43 @@ function App() {
   return (
     <>
       <IntlProvider messages={messages} locale={language} defaultLocale="en">
-        <Navbard lang={lang} />
-        <Routes>
-                <Route path="/" element={<Accueil />} />
-               <Route path="/acclang" element={<AccLang />} />
-              <Route path="/adduser" element={<AddUser />} />
-               <Route path="/addbook" element={<AddBook />} />
-                   {/*  <Route path="/book/:bookId" element={<Book />} />
-                <Route path="/pdffiles/:bookId" element={<PdfFiles />} />
+        <MediaQuery minWidth={1250}>
+          <Navbard lang={lang} />
+          <div className="container">
+            <div className="row">
+              <div className="col-12 col-md-3">
+                <Sidebar />
+              </div>
+              <div className="col-12 col-md-9">
+                <Routes>
+                  <Route path="/" element={<Accueil />} />
+                  <Route
+                    path="/bookdetails/:bookId"
+                    element={<BookDetails />}
+                  />
+                  <Route path="/adminpage/:them" element={<AdminPage />} />
+                  <Route path="/adminpage" element={<AdminPage />} />
+                  <Route path="/adduser2" element={<AddUser2 />} />
+                  <Route path="/adminp2" element={<AdminP2 />} />
+                  <Route path="/pdffiles/:bookId" element={<PdfFiles />} />
+                  <Route path="/theme5" element={<Theme5 />} />
+                  <Route
+                    path="/booksSearch/:search"
+                    element={<SearchBooks />}
+                  />
+                  <Route path="/home" element={<Home/>} />
+
+                  {/*  <Route path="/book/:bookId" element={<Book />} />
                 <Route path="/admin/books" element={<BooksTable />} />
                 <Route path="/admin/users" element={<Users />} />
                 <Route path="/affichagelist" element={<AffichageList />} />
                 <Route path="/affichagenor/:them" element={<AffichageNor />} />
                 <Route path="/accueil" element={<Accueil />} /> */}
-              </Routes>
+                </Routes>
+              </div>
+            </div>
+          </div>
+        </MediaQuery>
       </IntlProvider>
     </>
   );

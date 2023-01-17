@@ -3,7 +3,7 @@ import React from "react";
 const Vector = () => {
   return (
     <svg
-      className="absolute top-52 left-[272px]"
+      className="absolute top-52 left-[230px]"
       width={14}
       height={8}
       viewBox="0 0 14 8"

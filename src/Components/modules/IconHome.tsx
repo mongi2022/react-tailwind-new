@@ -3,7 +3,7 @@ import React from "react";
 const IconHome = () => {
   return (
     <svg
-      className="w-[31px] h-[27.56px] top-[42px] left-[45px] absolute"
+      className="w-[31px] h-[27.56px] top-[4px] left-[10px] absolute"
       width={33}
       height={30}
       viewBox="0 0 33 30"
